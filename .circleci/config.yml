@@ -12,7 +12,6 @@ jobs:
           pkg-manager: npm
       - run:
           command: |
-          echo "version of node"
           node -v
           npm run test
           name: Run tests
