@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
   node: circleci/node@5.0.2
+  heroku: circleci/heroku@1.2.6
 
 jobs:
   build_and_test: # this can be any name you choose
@@ -11,14 +12,11 @@ jobs:
       - node/install-packages:
           pkg-manager: npm
       - run:
-          command: |
-          node -v
-          npm run test
-          name: Run tests
-      - run:
-          command: npm run build
-          name: Build app
-      - persist_to_workspace:
-          root: ~/project
-          paths:
-            - .
+          name: install dependencies
+          command: npm install
+
+
+workflows:
+  build_test_deploy: # this can be any name you choose
+    jobs:
+    - build_and_test
