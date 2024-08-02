@@ -1,4 +1,4 @@
-# SleepBetter
+# SleepBetter (just test circle CI ^^ )
 
 ## Running project
 1. To start the development server, run the following command:
